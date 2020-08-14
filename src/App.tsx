@@ -11,12 +11,14 @@ const App: React.SFC = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/day' component={DayForecast} />
-        <Route exact path='/week' component={WeekForecast} />
-        <Route path='/' component={ErrorPage} />
-      </Switch>
+      <main>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/day' component={DayForecast} />
+          <Route exact path='/week' component={WeekForecast} />
+          <Route path='/' component={ErrorPage} />
+        </Switch>
+      </main>
     </BrowserRouter>
   );
 };
