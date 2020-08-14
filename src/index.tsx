@@ -2,5 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './css/main.css';
+import App from './App';
 
-ReactDOM.render(<h1 className='title'>Hello, World!</h1>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
