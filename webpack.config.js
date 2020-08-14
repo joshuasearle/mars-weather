@@ -8,12 +8,12 @@ module.exports = {
   // Add build files to folder build, and put all js into bundle.js
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   // For hot reloading in dev mode
   watchOptions: {
     poll: true,
-    ignored: /node_modules/
+    ignored: /node_modules/,
   },
   // To load the ts files
   module: {
@@ -21,23 +21,27 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+    ],
   },
   // To automatically add index.html and main.css to bulid folder
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
   // Files types we load
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  }
-}
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
+};
