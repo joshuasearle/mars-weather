@@ -1,10 +1,38 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export interface NavbarProps {}
+import classes from '../css/classes';
 
-const Navbar: React.SFC<NavbarProps> = () => {
-  return <Link to='Day'>Day</Link>;
+const Navbar: React.SFC = () => {
+  const path = useLocation().pathname;
+  console.log(path);
+
+  const pages = [
+    { name: 'Home', link: '/' },
+    { name: 'Week Forecast', link: '/week' },
+    { name: 'Learn More', link: '/more' },
+  ];
+
+  return (
+    <nav className={classes.Navbar}>
+      <div className={classes.Logo}>
+        <Link to='/'>
+          <h1>Mars Weather</h1>
+        </Link>
+      </div>
+      <div className={classes.Links}>
+        {pages.map(({ name, link }) => {
+          let className = '';
+          if (link === path) className = classes.Active;
+          return (
+            <Link className={className} key={name} to={link}>
+              {name}
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
