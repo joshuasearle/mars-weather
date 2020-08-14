@@ -1,1 +1,1 @@
-# Skeleton for TypeScript React Apps
+# App for viewing the weather on mars
