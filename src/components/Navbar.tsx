@@ -9,6 +9,7 @@ const Navbar: React.SFC = () => {
 
   const pages = [
     { name: 'Home', link: '/' },
+    { name: 'Current Weather', link: '/current' },
     { name: 'Week Forecast', link: '/week' },
     { name: 'Learn More', link: '/more' },
   ];
