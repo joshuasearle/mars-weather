@@ -6,6 +6,7 @@ export interface CurrentWeatherProps {}
 const CurrentWeather: React.SFC<CurrentWeatherProps> = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
+    // Only request if we don't have the data
     if (data) return;
     axios
       .get('https://api.mars.spacexcompanion.app/v1/weather/latest')
