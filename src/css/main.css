@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: black;
 }
 
 #root {
@@ -74,17 +75,25 @@ main {
   /* height: 1000px; */
   height: 100%;
   padding: 0;
-  margin: 0;
-  background-image: url('../assets/mars.jpg');
-  background-size: contain;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-position: left;
+  margin: 3em 8em;
   color: white;
+  display: flex;
+  align-content: space-between;
+  justify-items: center;
 }
 
 main h1 {
   margin: 0;
   color: white;
   z-index: 1000;
+}
+
+/* Make divs in flexbox same width */
+.image,
+.content {
+  flex: 1 1 0;
+}
+
+.image img {
+  width: 100%;
 }
